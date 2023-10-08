@@ -1,14 +1,9 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashSet<Integer> set = new HashSet<>();
         for(int i : nums) {
-            map.put(i, map.getOrDefault(i,0) + 1);
+            if(!set.add(i)) set.remove(i);
         }
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if(entry.getValue() == 1) {
-                return entry.getKey();
-            }
-        }
-        return -1;
+        return (Integer)(set.toArray()[0]);
     }
 }

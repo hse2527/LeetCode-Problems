@@ -3,8 +3,9 @@ class Solution {
         HashMap<String, List<String>> map = new HashMap<>();
         String key;
         List<String> list;
+        char[] arr;
         for(String str : strs) {
-            char[] arr = str.toCharArray();
+            arr = str.toCharArray();
             Arrays.sort(arr);
             key = new String(arr);
             list = map.getOrDefault(key, new ArrayList<>());

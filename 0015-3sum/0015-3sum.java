@@ -4,12 +4,12 @@ class Solution {
         Arrays.sort(nums);
         int l, r;
         HashSet<String> set = new HashSet<>();
-        for(int i = 1; i < nums.length - 1; i++) {
+        for(int i = 0; i < nums.length - 2; i++) {
             int remaining = 0 - nums[i];
-            l = 0;
+            l = i + 1;
             r = nums.length - 1;
 
-            while(l < r && l != i && r != i) {
+            while(l < r) {
                 Integer[] triplet = {nums[l], nums[i], nums[r]};
                 if(nums[l] + nums[r] > remaining) r--;
                 else if(nums[l] + nums[r] < remaining) l++;

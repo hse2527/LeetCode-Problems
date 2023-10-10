@@ -11,12 +11,12 @@ class Solution {
             r = nums.length - 1;
 
             while(l < r) {
-                Integer[] triplet = {nums[l], nums[i], nums[r]};
                 if(nums[l] + nums[r] > remaining) r--;
-                else if(nums[l] + nums[r] < remaining) l++;
-                else {
-                    if(set.add(hash(triplet))) {
-                        ans.add(Arrays.asList(triplet));
+                if(nums[l] + nums[r] < remaining) l++;
+                if(l == r) break;
+                if(nums[l] + nums[r] == remaining) {
+                    if(set.add(hash(new Integer[]{nums[l], nums[i], nums[r]}))) {
+                        ans.add(Arrays.asList(new Integer[]{nums[l], nums[i], nums[r]}));
                     }
                     l++;
                 } 

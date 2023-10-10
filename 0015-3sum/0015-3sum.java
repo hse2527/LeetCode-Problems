@@ -24,6 +24,6 @@ class Solution {
         return ans;
     }
     private String hash(Integer[] triplet) {
-        return "" + triplet[0] + "" + triplet[1] + "" + triplet[2] + "";
+        return "" + triplet[0] + triplet[1] + triplet[2];
     }
 }

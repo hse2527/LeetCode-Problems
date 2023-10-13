@@ -7,7 +7,6 @@ class Solution {
     }
 
     private int calculate(Stack<String> stack) {
-        if(stack.isEmpty()) return -1;
         String cur = stack.pop();
         int a = 0,b = 0;
         if(cur.length() == 1 && (cur.charAt(0) == '+' || cur.charAt(0) == '-' || cur.charAt(0) == '*' || cur.charAt(0) == '/')) {

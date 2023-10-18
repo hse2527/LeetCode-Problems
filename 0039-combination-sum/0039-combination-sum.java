@@ -8,13 +8,8 @@ class Solution {
         this.target = target;
         this.candidates = candidates;
         Arrays.sort(this.candidates);
-        for(int i = 0; i < candidates.length; i++) {
-            if(candidates[i] <= target) {
-                ArrayList<Integer> seq = new ArrayList<Integer>();
-                seq.add(candidates[i]);
-                dfs(candidates[i], i, seq);
-            }
-        }
+
+        dfs(0, 0, new ArrayList<Integer>());
 
         return ans;
     }

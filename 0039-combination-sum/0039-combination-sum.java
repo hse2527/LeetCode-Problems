@@ -23,13 +23,12 @@ class Solution {
         if(cur > target) return;
         if(cur == target) {
             ans.add((ArrayList<Integer>)seq.clone());
+            return;
         }
         for(int i = index; i < candidates.length; i++) {
-            // seq.add(candidates[i]);
-            ArrayList<Integer> newSeq = (ArrayList<Integer>)seq.clone();
-            newSeq.add(candidates[i]);
-            dfs(cur + candidates[i], i, newSeq);
-            // seq.remove((Integer)candidates[i]);
+            seq.add(candidates[i]);
+            dfs(cur + candidates[i], i, seq);
+            seq.remove((Integer)candidates[i]);
         }
     }
 }

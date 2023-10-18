@@ -7,8 +7,8 @@ class Solution {
         ans = new ArrayList<List<Integer>>();
         this.target = target;
         this.candidates = candidates;
-        Arrays.sort(this.candidates);
 
+        Arrays.sort(this.candidates);
         dfs(0, 0, new ArrayList<Integer>());
 
         return ans;

@@ -20,12 +20,12 @@ class Solution {
     }
 
     private void dfs(int cur, int index, ArrayList<Integer> seq) {
-        if(cur > target) return;
         if(cur == target) {
             ans.add((ArrayList<Integer>)seq.clone());
             return;
         }
         for(int i = index; i < candidates.length; i++) {
+            if(cur + candidates[i] > target) return;
             seq.add(candidates[i]);
             dfs(cur + candidates[i], i, seq);
             seq.remove((Integer)candidates[i]);

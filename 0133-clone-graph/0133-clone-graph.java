@@ -26,13 +26,6 @@ class Solution {
         Node newNode = new Node(node.val);
         visitedNodes[node.val] = newNode;
         dfs(node, newNode, 1);
-
-        for(int i = 1; i <= 4; i++) {
-            for(int j = 1; j <= 4; j++) {
-                System.out.print(visited[i][j]);
-            }
-            System.out.println();
-        }
         return newNode;
     }
 

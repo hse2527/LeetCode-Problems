@@ -1,12 +1,11 @@
 class Solution {
-    boolean[] possible;
-    List<List<String>> out = new ArrayList<>();
     public List<List<String>> solveNQueens(int n) {
-        dfs(new int[n], new boolean[n], n, 0);
+        List<List<String>> out = new ArrayList<>();
+        dfs(new int[n], new boolean[n], n, 0, out);
         return out;
     }
 
-    private void dfs(int[] queens, boolean[] possible, int c, int r) {
+    private void dfs(int[] queens, boolean[] possible, int c, int r, List<List<String>> out) {
         if(c == 0) {
             List<String> cur = new ArrayList<>();
             for(int i = 0; i < queens.length; i++) {
@@ -31,7 +30,7 @@ class Solution {
             if(pos) {
                 queens[r] = i;
                 possible[i] = true;
-                dfs(queens, possible, c - 1, r + 1);
+                dfs(queens, possible, c - 1, r + 1, out);
                 possible[i] = false;
             }
         }

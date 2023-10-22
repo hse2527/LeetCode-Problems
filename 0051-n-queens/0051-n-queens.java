@@ -1,28 +1,23 @@
 class Solution {
     boolean[] possible;
-    List<int[]> ans = new ArrayList<>();
+    List<List<String>> out = new ArrayList<>();
     public List<List<String>> solveNQueens(int n) {
-        List<List<String>> out = new ArrayList<>();
         dfs(new int[n], new boolean[n], n, 0);
-
-        for(int[] in : ans) {
-            List<String> cur = new ArrayList<>();
-            for(int i = 0; i < in.length; i++) {
-                String str = "";
-                for(int j = 0; j < n; j++) {
-                    if(in[i] == j) str += 'Q';
-                    else str += '.';
-                }
-                cur.add(str);
-            }
-            out.add(cur);
-        }
         return out;
     }
 
     private void dfs(int[] queens, boolean[] possible, int c, int r) {
         if(c == 0) {
-            ans.add(queens);
+            List<String> cur = new ArrayList<>();
+            for(int i = 0; i < queens.length; i++) {
+                String str = "";
+                for(int j = 0; j < queens.length; j++) {
+                    if(queens[i] == j) str += 'Q';
+                    else str += '.';
+                }
+                cur.add(str);
+            }
+            out.add(cur);
         }
         for(int i = 0; i < possible.length; i++) {
             if(possible[i]) continue;

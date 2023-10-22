@@ -10,13 +10,17 @@ class Solution {
             List<String> cur = new ArrayList<>();
             for(int i = 0; i < queens.length; i++) {
                 String str = "";
-                for(int j = 0; j < queens.length; j++) {
-                    if(queens[i] == j) str += 'Q';
-                    else str += '.';
+                for(int j = 0; j < queens[i]; j++) {
+                    str += '.';
+                }
+                str += 'Q';
+                for(int j = queens[i] + 1; j < queens.length; j++) {
+                    str += '.';
                 }
                 cur.add(str);
             }
             out.add(cur);
+            return;
         }
         for(int i = 0; i < possible.length; i++) {
             if(possible[i]) continue;

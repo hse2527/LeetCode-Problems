@@ -29,11 +29,10 @@ class Solution {
                 }
             }
             if(pos) {
-                int[] newArr = queens.clone();
-                boolean[] newPos = possible.clone();
-                newArr[r] = i;
-                newPos[i] = true;
-                dfs(newArr, newPos, c - 1, r + 1);
+                queens[r] = i;
+                possible[i] = true;
+                dfs(queens, possible, c - 1, r + 1);
+                possible[i] = false;
             }
         }
     }

@@ -14,10 +14,7 @@ class Solution {
 
     public boolean checkParts(char[] orig, char[] comp) {
         Arrays.sort(comp);
-        boolean check = true;
-        for(int i = 0; i < orig.length; i++) {
-            if(orig[i] != comp[i]) check = false;
-        }
-        return check;
+        if(new String(orig).equals(new String(comp))) return true;
+        return false;
     }
 }

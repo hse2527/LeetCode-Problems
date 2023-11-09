@@ -13,10 +13,10 @@ class Solution {
 
     public void recursivef(int opens, int closes, String cur) {
         if(cur.length() == lim) {
-            if(!set.contains(cur)) {
+            // if(!set.contains(cur)) {
                 set.add(cur);
                 ans.add(cur);
-            }
+            // }
             return;
         }
         if(cur.length() == 0) {
